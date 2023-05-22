@@ -7,9 +7,9 @@ import 'dio_service_interceptors.dart';
 class DioService extends DioForNative {
   DioService() {
     options.baseUrl = AppConsts.apiUrl;
-    options.connectTimeout = const Duration(milliseconds: 8000);
-    options.receiveTimeout = const Duration(milliseconds: 8000);
-    options.sendTimeout = const Duration(milliseconds: 8000);
+    options.connectTimeout = const Duration(milliseconds: 2000);
+    options.receiveTimeout = const Duration(milliseconds: 2000);
+    options.sendTimeout = const Duration(milliseconds: 2000);
 
     options.responseType = ResponseType.json;
 

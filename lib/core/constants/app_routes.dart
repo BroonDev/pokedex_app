@@ -22,9 +22,9 @@ class AppRoutes {
               return Scaffold(
                   appBar: AppBar(
                       title: const Center(
-                          child: Text(AppConsts.unvalidRouteErrorTitle))),
+                          child: Text(AppConsts.invalidRouteErrorTitle))),
                   body: const Center(
-                      child: Text(AppConsts.unvalidRouteErrorMessage)));
+                      child: Text(AppConsts.invalidRouteErrorMessage)));
             });
     }
   }
