@@ -19,6 +19,9 @@ dependencies:
   dio: ^5.1.2
   get_it: ^7.6.0
   intl: ^0.18.1
+  flutter_svg: ^1.0.3
+  cached_network_image: ^3.0.0
+  shimmer: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -30,3 +33,6 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  assets:
+    - assets/icons/

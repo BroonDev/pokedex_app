@@ -23,6 +23,27 @@ class AppColors {
   static const Color steelTypeColor = Color(0xFFB7B9D0);
   static const Color waterTypeColor = Color(0xFF6493EB);
 
+  static const Map<String, Color> colorsType = {
+    'bug': bugTypeColor,
+    'dark': darkTypeColor,
+    'dragon': dragonTypeColor,
+    'electric': electricTypeColor,
+    'fairy': fairyTypeColor,
+    'fighting': fightingTypeColor,
+    'fire': fireTypeColor,
+    'flying': flyingTypeColor,
+    'ghost': ghostTypeColor,
+    'normal': normalTypeColor,
+    'grass': grassTypeColor,
+    'ground': groundTypeColor,
+    'ice': iceTypeColor,
+    'poison': poisonTypeColor,
+    'psychic': psychicTypeColor,
+    'rock': rockTypeColor,
+    'steel': steelTypeColor,
+    'water': waterTypeColor,
+  };
+
   //Grayscale
   static const Color darkColor = Color(0xFF212121);
   static const Color mediumColor = Color(0xFF666666);

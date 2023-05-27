@@ -1,3 +1,4 @@
+import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
 
 import '../../../core/core.dart';
@@ -5,17 +6,21 @@ import '../../../core/models/pokemon_model.dart';
 import '../../../core/utils/functions.dart';
 
 class PokemonCardWidget extends StatelessWidget {
-  final PokemonModel pokemonModel;
+  final PokemonModel pokemon;
+  final Function onTap;
 
-  const PokemonCardWidget(
-    this.pokemonModel, {
+  const PokemonCardWidget({
     Key? key,
+    required this.pokemon,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () async {
+        await onTap();
+      },
       child: Stack(
         children: [
           Container(
@@ -54,7 +59,7 @@ class PokemonCardWidget extends StatelessWidget {
             child: Container(
               padding: const EdgeInsets.only(right: 12, top: 12),
               child: Text(
-                formatId(pokemonModel.id),
+                formatId(pokemon.id),
                 style: AppTextStyles.caption
                     .copyWith(color: AppColors.mediumColor, fontSize: 12),
               ),
@@ -62,32 +67,18 @@ class PokemonCardWidget extends StatelessWidget {
           ),
           Positioned(
             child: Center(
-              child: pokemonModel.image != null
-                  ? Image.network(
-                      pokemonModel.image!,
+              child: pokemon.image != null
+                  ? CachedNetworkImage(
+                      imageUrl: pokemon.image!,
                       fit: BoxFit.fill,
-                      loadingBuilder: (BuildContext context, Widget child,
-                          ImageChunkEvent? loadingProgress) {
-                        if (loadingProgress == null) return child;
-                        return Center(
-                          child: CircularProgressIndicator(
-                            value: loadingProgress.expectedTotalBytes != null
-                                ? loadingProgress.cumulativeBytesLoaded /
-                                    loadingProgress.expectedTotalBytes!
-                                : null,
-                          ),
-                        );
-                      },
                       height: 72,
                       width: 72,
-                      cacheHeight: 72,
-                      cacheWidth: 72,
+                      placeholder: (context, url) =>
+                          Image.asset(AppIcons.pokemonEmpty),
+                      errorWidget: (context, url, error) =>
+                          const Icon(Icons.error),
                     )
-                  : const Icon(
-                      AppIcons.pokeball,
-                      size: 72,
-                      color: AppColors.iceTypeColor,
-                    ),
+                  : Image.asset(AppIcons.pokemonEmpty, height: 72, width: 72),
             ),
           ),
           Align(
@@ -95,7 +86,7 @@ class PokemonCardWidget extends StatelessWidget {
             child: Padding(
               padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 8),
               child: Text(
-                "${pokemonModel.name[0].toUpperCase()}${pokemonModel.name.substring(1).toLowerCase()}",
+                capitalize(pokemon.name),
                 textAlign: TextAlign.center,
                 style: AppTextStyles.body3.copyWith(
                   color: AppColors.darkColor,

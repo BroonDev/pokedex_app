@@ -23,6 +23,8 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
   Widget build(BuildContext context) {
     return Expanded(
       child: SizedBox(
+        height: 40,
+        width: double.infinity,
         child: TextField(
           controller: widget.filterController,
           onChanged: (value) {
@@ -41,9 +43,8 @@ class _CustomSearchFieldState extends State<CustomSearchField> {
               hintStyle:
                   AppTextStyles.body2.copyWith(color: AppColors.mediumColor),
               enabledBorder: const OutlineInputBorder(
-                borderRadius: BorderRadius.all(Radius.circular(30)),
-                borderSide: BorderSide(color: Colors.white),
-              ),
+                  borderRadius: BorderRadius.all(Radius.circular(30)),
+                  borderSide: BorderSide(color: Colors.white)),
               border: const OutlineInputBorder(
                   borderRadius: BorderRadius.all(Radius.circular(30)),
                   borderSide: BorderSide(color: Colors.white)),

@@ -7,10 +7,10 @@ class DioServiceInterceptors extends InterceptorsWrapper {
   void onRequest(RequestOptions options, RequestInterceptorHandler handler) {
     options.headers.addAll({"Content-Type": "application/json"});
 
-    //  print('REQUEST[${options.method}] => PATH: ${options.path}');
-    //  print('BASE_URL: [${options.baseUrl}] => PATH: ${options.path}');
-    //  print('PARAMETERS: [${options.queryParameters}]');
-    //  print('BODY: [${options.data}]');
+    //print('REQUEST[${options.method}] => PATH: ${options.path}');
+    //print('BASE_URL: [${options.baseUrl}] => PATH: ${options.path}');
+    //print('PARAMETERS: [${options.queryParameters}]');
+    //print('BODY: [${options.data}]');
 
     super.onRequest(options, handler);
   }

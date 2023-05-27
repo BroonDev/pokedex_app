@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:get_it/get_it.dart';
 
 import '../../../core/core.dart';
@@ -76,13 +77,23 @@ class _FilterButtonWidgetState extends State<FilterButtonWidget> {
   @override
   Widget build(BuildContext context) {
     return CircleAvatar(
-      radius: 25,
       backgroundColor: AppColors.whiteColor,
       child: IconButton(
         onPressed: () {
           showAlertDialog();
         },
-        icon: const Icon(AppIcons.tag, color: AppColors.primaryColor),
+        icon: Observer(builder: (context) {
+          return Image.asset(
+            homeStore.filterType == FilterType.number
+                ? AppIcons.filterNumber
+                : homeStore.filterType == FilterType.name
+                    ? AppIcons.filterName
+                    : AppIcons.filterStandard,
+            color: AppColors.primaryColor,
+            cacheHeight: 10,
+            cacheWidth: 10,
+          );
+        }),
         splashRadius: 25,
         padding: const EdgeInsets.all(12),
       ),

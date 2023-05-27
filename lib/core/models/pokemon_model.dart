@@ -33,4 +33,14 @@ class PokemonModel {
 
   factory PokemonModel.fromJson(String source) =>
       PokemonModel.fromMap(json.decode(source));
+
+  Map<String, dynamic> toMap() {
+    return {
+      'id': id,
+      'name': name,
+      'image': image,
+    };
+  }
+
+  String toJson() => json.encode(toMap());
 }

@@ -1,4 +1,4 @@
-import 'package:flutter/cupertino.dart';
+import 'package:flutter/material.dart';
 import 'package:mobx/mobx.dart';
 import 'package:pokedex_app/core/services/dio_service/dio_response.dart';
 
@@ -9,7 +9,7 @@ part 'home_store.g.dart';
 
 class HomeStore = HomeStoreBase with _$HomeStore;
 
-enum FilterType { name, number }
+enum FilterType { standard, name, number }
 
 abstract class HomeStoreBase with Store {
   final PokemonRepository repository;
@@ -37,7 +37,7 @@ abstract class HomeStoreBase with Store {
     getPokemons();
     setNextUrl('');
     setTextFilter('');
-    setFilterType(FilterType.name);
+    setFilterType(FilterType.standard);
   }
 
   @observable

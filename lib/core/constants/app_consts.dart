@@ -14,4 +14,7 @@ class AppConsts {
 
   //Filter Widget
   static const String titleLabelFilterWidget = "Sort by";
+
+  //Pokemon Detail Page
+  static const String descriptionNotFound = "No Pokémon description was found";
 }
