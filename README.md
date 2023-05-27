@@ -1,16 +1,56 @@
-# pokedex_app
+<h1 align="center">
+  <img alt="DevQuiz" title="DevQuiz" src=".github/thumbnail.png" />
+</h1>
 
-A new Flutter project.
+---
 
-## Getting Started
+## Layout
 
-This project is a starting point for a Flutter application.
+Layout used for development, you can access it in [FIGMA](<https://www.figma.com/file/oyy40kpPCamOuJOQu1uYMo/Pok%C3%A9dex-(Community)?type=design&node-id=0-1&t=DWOWUmDb3a8TNSUI-0>)
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Functionalities
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+<p>
+
+- Home Page:
+  - List of pokémon with their names and numbers
+  - Pokemon search by name and number
+  - sort by name and number
+- Pokemon Detail Page:
+  - Listing of pokemon information containing the following data:
+  - Name
+  - Number
+  - Image
+  - Weight
+  - Height
+  - Movements
+  - Short Description
+  - Base Status
+  </p>
+
+## Developing
+
+---
+
+### Built With
+
+    - Flutter
+    - Mobx(state management)
+    - get_it(dependency injection)
+    - dio(Http request)
+    - google fonts
+
+### Prerequisites
+
+First, correctly configure the Flutter development environment on your machine, for that, access the link below [Flutter Install](<https://www.figma.com/file/oyy40kpPCamOuJOQu1uYMo/Pok%C3%A9dex-(Community)?type=design&node-id=0-1&t=DWOWUmDb3a8TNSUI-0>)
+
+### Setting up Dev
+
+```shell
+git clone https://github.com/Guysanches/pokedex_app
+cd pokedex_app
+flutter pub get
+flutter run
+```
